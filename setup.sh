@@ -16,10 +16,4 @@ primaryColor='#7792E3'
 " > ~/.streamlit/config.toml
 
 echo "\
-[mysql]
-host = 'localhost'\n\
-port = 3306\n\
-database = 'newsletter'\n\
-user = 'root'\n\
-password = ''\n\
 " > ~/.streamlit/secrets.toml
