@@ -1,0 +1,100 @@
+/* .instrukcja-kroki{{
+    background-color:rgba(225, 225, 225, 0.15);
+    color:#fffff;
+    font-size:17px;
+    font-weight: 500;
+    border-radius:5px;
+    text-align:center;
+    padding: 27.5px 15px 27.5px 35px;
+
+}}
+.parametry-text {{
+    color:#fffff;
+    font-size:17px;
+    text-align:right;
+    padding-top:8px;
+}}
+.parametry-contenery {{
+    background-color:rgba(225, 225, 255, 0.2);
+    color:#fffff;
+    font-size:17px;
+    border-radius:5px;
+    text-align:center;
+    padding-top:5px; 
+    padding-bottom:5px;
+}}
+.stopy-twoje{{
+    background-color:rgba(56, 217, 217, 0.2);
+    color:#fffff;
+    font-size:17px;
+    border-radius:5px;
+    text-align:center;
+    padding-top:5px; 
+    padding-bottom:5px;
+}}
+.stopy-optymistyczny{{
+    background-color:rgba(136, 217, 56, 0.2);
+    color:#fffff;
+    font-size:17px;
+    border-radius:5px;
+    text-align:center;
+    padding-top:5px; 
+    padding-bottom:5px;
+}}
+.stopy-bazowy{{
+    background-color:rgba(214, 217, 56, 0.2);
+    color:#fffff;
+    font-size:17px;
+    border-radius:5px;
+    text-align:center;
+    padding-top:5px; 
+    padding-bottom:5px;
+}}
+.stopy-pesymistyczny{{
+    background-color:rgba(98, 56, 217, 0.2);
+    color:#fffff;
+    font-size:17px;
+    border-radius:5px;
+    text-align:center;
+    padding-top:5px; 
+    padding-bottom:5px;
+}}
+.nadplaty-contenery{{
+    background-color:rgba(0, 178, 255, 0.15);
+    color:#fffff;
+    font-size:17px;
+    border-radius:5px;
+    text-align:center;
+    padding-top:5px; 
+    padding-bottom:5px
+}}
+.bilansowanie-contenery{{
+    background-color:rgba(0, 225, 117, 0.15);
+    color:#fffff;
+    font-size:17px;
+    border-radius:5px;
+    text-align:center;
+    padding-top:5px; 
+    padding-bottom:5px;
+}}
+.bilansowanie-left_cont{{
+    background-color:rgba(0, 178, 255, 0.15);
+    color:#fffff;font-size:17px;
+    border-radius:5px;
+    text-align:left;
+    padding: 27.5px 15px 27.5px 35px;
+}}
+.sam-contenery{{
+    background-color:rgba(0, 225, 117, 0.15);
+    color:#fffff;font-size:17px;
+    border-radius:5px;
+    text-align:center; 
+    padding-top:5px; 
+    padding-bottom:5px;"
+}}
+.nazwyParametrow{{
+    text-align: center; 
+    color: white; 
+    font-weight:600; 
+    font-size:25px
+}} */
