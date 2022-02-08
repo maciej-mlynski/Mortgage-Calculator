@@ -17,5 +17,5 @@ primaryColor='#7792E3'
 
 echo "\
 [mysql]\n\
-port = 3306\n\
+port = 443\n\
 " > ~/.streamlit/secrets.toml
