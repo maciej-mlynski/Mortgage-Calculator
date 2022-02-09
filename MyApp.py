@@ -522,8 +522,8 @@ def main():
     local_css()
     Tabela = pd.DataFrame(lister)
     lister = get_data() 
-
-    get_data().append({'wielkosc': 0,'okres': 0, 'marza' :0.0, 'wibor': 2.74,'nadplata':0,'kiedynad':0,'indn':0.0,'skladka':0,'procent': 0.0,'inds':0.0,'kiedyskl':0,'procentdyw':0.0})
+    aktualny_wibor = 3.17
+    get_data().append({'wielkosc': 0,'okres': 0, 'marza' :0.0, 'wibor': aktualny_wibor,'nadplata':0,'kiedynad':0,'indn':0.0,'skladka':0,'procent': 0.0,'inds':0.0,'kiedyskl':0,'procentdyw':0.0})
         
         
     Tabela = pd.DataFrame(lister)
@@ -583,7 +583,7 @@ def main():
                 #-----------------------------------------------SEKCJA nr.1 Instrukcja------------------------------------------------
                 if choice == 'Zacznij tutaj':
 
-                    link = "https://financialmill.pl/readpageKredytyHipoteczneWstep/readpage.html"
+                    link = "https://financialmill.pl/posts/readpageKredytyHipoteczneWstep/readpage.html"
                     st.markdown(f'<a role="button" class="btn-primary" target="_blank" href={link}>Lekcja nr.1 WSTĘP</a>', unsafe_allow_html=True)
 
                     st.markdown(f'<p class="first_last-coment">{"Witaj w kalkulatorze kredytowym!"}</p>', unsafe_allow_html=True)
@@ -675,7 +675,7 @@ def main():
 
                 elif choice == 'Parametry kredytu':
 
-                    link = "https://financialmill.pl/readpageKredytyHipoteczneKonstrukcja/readpage.html"
+                    link = "https://financialmill.pl/posts/readpageKredytyHipoteczneKonstrukcja/readpage.html"
                     st.markdown(f'<a role="button" class="btn-primary" target="_blank" href={link}>Lekcja nr. 2 KONSTRUKCJA KREDYTU</a>', unsafe_allow_html=True)
                 
                     up = "Wpisz parametry swojego kredytu i przekonaj się ile prowizji<br>zapłacisz za jego udzielenie przez cały okres."
@@ -700,7 +700,7 @@ def main():
                     with col4:
                         marza = st.number_input('Marża banku', min_value=0.00, format="%.2f", step=0.5,value = Tabela['marza'][len(Tabela)-1], help="Podaj marżę banku wyrażoną w procentach. Przykład: Marza = 2,5% wpisz do kalkulatora 2.5")
                     with col5:
-                        wibor = st.number_input('WIBOR 3M', min_value=0.1, format="%.2f",value = 2.74, help="Domyślnie ustawiony jest aktualny poziom WIBOR 3M. Pamiętaj, że możesz go zmienić według własnych potrzeb.")
+                        wibor = st.number_input('WIBOR 3M', min_value=0.1, format="%.2f",value = aktualny_wibor, help="Domyślnie ustawiony jest aktualny poziom WIBOR 3M. Pamiętaj, że możesz go zmienić według własnych potrzeb.")
 
                     if st.button("Oblicz"):
                         get_data().append({'wielkosc': wielkosc,'okres': okres, 'marza' :marza, 'wibor' :wibor, 'kiedy': kiedy,'nadplata':Tabela['nadplata'][len(Tabela)-1],'kiedynad':Tabela['kiedynad'][len(Tabela)-1],'indn':Tabela['indn'][len(Tabela)-1],'skladka':Tabela['skladka'][len(Tabela)-1],'procent': Tabela['procent'][len(Tabela)-1],'inds':Tabela['inds'][len(Tabela)-1],'kiedyskl':Tabela['kiedyskl'][len(Tabela)-1],'procentdyw':Tabela['procentdyw'][len(Tabela)-1]})     
@@ -790,7 +790,7 @@ def main():
                 #-------------------------------------SEKCJA nr.2 Stopy procentowe vs. rata---------------------------------------------------
                 elif choice == 'Stopy procentowe vs rata':
 
-                    link = "https://financialmill.pl/readpageKredytyHipoteczneWibor/readpage.html"
+                    link = "https://financialmill.pl/posts/readpageKredytyHipoteczneWibor/readpage.html"
                     st.markdown(f'<a role="button" class="btn-primary" target="_blank" href={link}>Lekcja nr. 3 WIBOR 3M</a>', unsafe_allow_html=True)
                     
                     up = "Dwa podstawowe koszty kredytu to <b>marża</b>, która jest ustalana w momencie podpisania umowy oraz <b>WIBOR 3M</b>, który w czasie kredytu może ulegać zmianie. Sprawdź jak zmienność WIBOR 3M wpłynie na kosz i ratę Twojego kredytu"
@@ -1000,14 +1000,14 @@ def main():
                         st.markdown(f'<p class="down-coment" style="padding-bottom:50px;">Nie unikaj ryzyka!<br> Staraj się je ograniczyć wybierając właściwy wariant</p>', unsafe_allow_html=True)
 
 
-                        link = "https://financialmill.pl/readpageKredytyHipoteczneKredytNaMiare/readpage.html"
+                        link = "https://financialmill.pl/posts/readpageKredytyHipoteczneKredytNaMiare/readpage.html"
                         st.markdown(f'<a role="button" class="btn-primary" target="_blank" href={link}>Lekcja nr. 4 KREDYT SZYTY NA MIARĘ </a>', unsafe_allow_html=True)
 
 
                 #-------------------------------------------------------Sekcja nr.3 Nadpłaty--------------------------------------------------------------------------
                 elif choice == 'Nadpłacanie kredytu':
                     
-                    link = "https://www.financialmill.pl/"
+                    link = "https://financialmill.pl/posts/readpageKredytyHipoteczneNadplaty/readpage.html"
                     st.markdown(f'<a role="button" class="btn-primary" href={link}>Lekcja nr. 4 NADPŁACANIE KREDYTU</a>', unsafe_allow_html=True)
                     
                     up = "Jednym ze sposobów na zmniejszenie kosztów kredytu są nadpłaty.<br>Sprawdź ile możesz dzięki nim zaoszczędzić."
@@ -1148,7 +1148,7 @@ def main():
                 #--------------------------------------------Sekcja nr. 4 bilansowanie kredytu-----------------------------------------------------------
                 elif choice == 'Bilansowanie kredytu':
 
-                    link = "https://www.financialmill.pl/"
+                    link = "https://financialmill.pl/posts/readpageKredytyHipoteczneBilansowanie/readpage.html"
                     st.markdown(f'<a role="button" class="btn-primary" href={link}>Lekcja nr. 5 BILANSOWANIE KREDYTU</a>', unsafe_allow_html=True)
 
                     up = "Kolejnym sposobem na optymalizację kosztów kredytu jest bilansowanie.<br>Polego ona na regularnym inwestowaniu środków w celu jednorazowej spłaty kapitału"
@@ -1300,8 +1300,8 @@ def main():
                 #-------------------------------------------------------------------------------SEKCJA nr. 5 -----------------------------------------------------------------------------------        
                 elif choice == 'Kredyt spłaca sie sam?':
 
-                    link = "https://www.financialmill.pl/"
-                    st.markdown(f'<a role="button" class="btn-primary" href={link}>Lek   cja nr. 6 GOTOWY NA WSZYSTKO</a>', unsafe_allow_html=True)
+                    link = "https://financialmill.pl/posts/readpageKredytyHipoteczneDywidenda/readpage.html"
+                    st.markdown(f'<a role="button" class="btn-primary" href={link}>Lekcja nr. 6 GOTOWY NA WSZYSTKO</a>', unsafe_allow_html=True)
                     
                     up = "Ostatnią ciekawą formą optymalizacji kredytu jest możliwość zbudowania poduszki<br>finansowej z pasywnym przychodem inwestycyjnym, którego dywidenda pokryje ratę Twojego kredytu"
                     st.markdown(f'<h2 style="background-color:rgba(0, 255, 117, 0.1);\
