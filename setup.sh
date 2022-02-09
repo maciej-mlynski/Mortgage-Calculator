@@ -15,7 +15,7 @@ base='dark'
 primaryColor='#7792E3'
 " > ~/.streamlit/config.toml
 
-echo "\
-[mysql]\n\
-port = 443\n\
-" > ~/.streamlit/secrets.toml
+# echo "\
+# [mysql]\n\
+# port = 443\n\
+# " > ~/.streamlit/secrets.toml
