@@ -543,8 +543,8 @@ def main():
     lns = st.sidebar.selectbox("Start", topics)
     if lns == 'Rejestracja':
         
-        link = "https://financialmill.pl/readpageKredytyHipoteczneWstep/readpage.html"
-        st.sidebar.markdown(f'<div style="text-align: center; margin-top:20px;"> <a role="button" class="btn-primary2" target="_blank" style="font-family: "Montserrat" href={link}>Załóż konto</a></div>', unsafe_allow_html=True)  
+        link = "https://financialmill.pl/premium/index.php"
+        st.sidebar.markdown(f'<div style="text-align: center; margin-top:20px;"> <a role="button" class="btn-primary" target="_blank" style="font-family: "Montserrat" href={link}>Zapisz się!</a></div>', unsafe_allow_html=True)  
     
     elif lns == 'Logowanie':
         
