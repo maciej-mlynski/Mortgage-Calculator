@@ -609,7 +609,7 @@ def main():
                     right_mid = 'W naszych wyliczeniach nie uwzględniliśmy kosztów okołokredytowych, ponieważ zależą one od indywidualnej oferty banku.'
 
                     
-                    right_bottom = "Wygospodaruj godzinkę wolnego czasu. Przejdź spokojnie przez wszystkie etapy. Pozwoli Ci to zaoszczędzić wiele tysięcy."
+                    right_bottom = "Pola do wypełniania oznaczone gwiazdką* to pola obowiązkowe, bez których kalkulator nie wykona obliczeń."
                     
 
                     ok = "images/tooltip.png"
@@ -691,14 +691,14 @@ def main():
                     col1, col2, col3, col4, col5 =  st.beta_columns([1.2,0.9,0.8,0.9,0.9])
 
                     with col1:
-                        wielkosc = st.number_input('Kwota kredytu', key = "", min_value=0, step=50000, value = Tabela['wielkosc'][len(Tabela)-1], help='Podaj kwotę kredytu, o którą chciałbyś wnioskować (wnioskowałeś). Chodzi o część pożyczoną z banku, nie uwzględniaj wkładu własnego.')
+                        wielkosc = st.number_input('Kwota kredytu*', key = "", min_value=0, step=50000, value = Tabela['wielkosc'][len(Tabela)-1], help='Podaj kwotę kredytu, o którą chciałbyś wnioskować (wnioskowałeś). Chodzi o część pożyczoną z banku, nie uwzględniaj wkładu własnego.')
                         
                     with col2: 
-                        okres = st.number_input('Na ile lat?', min_value=0, step=10, max_value=30,value = Tabela['okres'][len(Tabela)-1], help = 'Określ czas trwania kredytu, wyrażony w latach.')
+                        okres = st.number_input('Na ile lat?*', min_value=0, step=10, max_value=30,value = Tabela['okres'][len(Tabela)-1], help = 'Określ czas trwania kredytu, wyrażony w latach.')
                     with col3:
                         kiedy = st.date_input('Kiedy kredyt?', min_value=datetime.today(), help='Nie zdecydowałeś się jeszcze na zaciągnięcie kredytu? Podaj szcunkową datę jego startu. Jeśli już jesteś kredytobiorcą, wybierz dzisiejszą datę. W polu "Kwota kredytu" wpisz kapitał pozostały do spłaty, a w "Na ile lat?" wpisz ile lat pozostało Ci do spłaty.')
                     with col4:
-                        marza = st.number_input('Marża banku', min_value=0.00, format="%.2f", step=0.5,value = Tabela['marza'][len(Tabela)-1], help="Podaj marżę banku wyrażoną w procentach. Przykład: Marza = 2,5% wpisz do kalkulatora 2.5")
+                        marza = st.number_input('Marża banku*', min_value=0.00, format="%.2f", step=0.5,value = Tabela['marza'][len(Tabela)-1], help="Podaj marżę banku wyrażoną w procentach. Przykład: Marza = 2,5% wpisz do kalkulatora 2.5")
                     with col5:
                         wibor = st.number_input('WIBOR 3M', min_value=0.1, format="%.2f",value = aktualny_wibor, help="Domyślnie ustawiony jest aktualny poziom WIBOR 3M. Pamiętaj, że możesz go zmienić według własnych potrzeb.")
 
@@ -805,7 +805,7 @@ def main():
                     col1, col2, col3, col4, col5 =  st.beta_columns([1.2,0.9,0.8,0.9,0.9])
 
                     with col1:
-                        wielkosc = st.number_input('Kwota kredytu', min_value=0, step=50000,value = Tabela['wielkosc'][len(Tabela)-1], help='Podaj kwotę kredytu, o którą chciałbyś wnioskować (wnioskowałeś). Chodzi o część pożyczoną z banku, nie uwzględniaj wkładu własnego.')
+                        wielkosc = st.number_input('Kwota kredytu*', min_value=0, step=50000,value = Tabela['wielkosc'][len(Tabela)-1], help='Podaj kwotę kredytu, o którą chciałbyś wnioskować (wnioskowałeś). Chodzi o część pożyczoną z banku, nie uwzględniaj wkładu własnego.')
                     with col2:
                         okres = st.number_input('Na ile lat?', min_value=0, step=10, max_value=30,value = Tabela['okres'][len(Tabela)-1], help = 'Określ czas trwania kredytu, wyrażony w latach.')
                     with col3:
@@ -907,8 +907,8 @@ def main():
                         x = np.arange(4)
                         ax1 = plt.subplot(1,1,1)
                         w = 0.2
-                        fig.patch.set_facecolor('white')
-                        fig.patch.set_alpha(0)
+                        fig.patch.set_facecolor('#010024')
+                        fig.patch.set_alpha(0.2)
 
                         ax = fig.add_subplot(1, 1, 1)
                         ax.patch.set_alpha(0)
@@ -1023,15 +1023,15 @@ def main():
                     col1, col2, col3, col4, col5 =  st.beta_columns([1.2,0.9,0.8,0.9,0.9])
 
                     with col1:
-                        wielkosc = st.number_input('Kwota kredytu', min_value=0, step=50000,value = Tabela['wielkosc'][len(Tabela)-1], help='Podaj kwotę kredytu, o którą chciałbyś wnioskować (wnioskowałeś). Chodzi o część pożyczoną z banku, nie uwzględniaj wkładu własnego.')
+                        wielkosc = st.number_input('Kwota kredytu*', min_value=0, step=50000,value = Tabela['wielkosc'][len(Tabela)-1], help='Podaj kwotę kredytu, o którą chciałbyś wnioskować (wnioskowałeś). Chodzi o część pożyczoną z banku, nie uwzględniaj wkładu własnego.')
                     with col2:
-                        okres = st.number_input('Na ile lat?', min_value=0, step=10, max_value=30,value = Tabela['okres'][len(Tabela)-1], help = 'Określ czas trwania kredytu, wyrażony w latach.')
+                        okres = st.number_input('Na ile lat?*', min_value=0, step=10, max_value=30,value = Tabela['okres'][len(Tabela)-1], help = 'Określ czas trwania kredytu, wyrażony w latach.')
                     with col3:
                         kiedy = st.date_input('Kiedy kredyt?', min_value=datetime.today(), help='Nie zdecydowałeś się jeszcze na zaciągnięcie kredytu? Podaj szcunkową datę jego startu. Jeśli już jesteś kredytobiorcą, wybierz dzisiejszą datę. W polu "Kwota kredytu" wpisz kapitał pozostały do spłaty, a w "Na ile lat?" wpisz ile lat pozostało Ci do spłaty.')
                     with col4:
-                        marza = st.number_input('Marża banku', min_value=0.00, format="%.2f", step=0.5,value = Tabela['marza'][len(Tabela)-1], help="Podaj marżę banku wyrażoną w procentach. Przykład: Marza = 2,5% wpisz do kalkulatora 2.5")
+                        marza = st.number_input('Marża banku*', min_value=0.00, format="%.2f", step=0.5,value = Tabela['marza'][len(Tabela)-1], help="Podaj marżę banku wyrażoną w procentach. Przykład: Marza = 2,5% wpisz do kalkulatora 2.5")
                     with col5:
-                        wibor = st.number_input('WIBOR 3M', min_value=0.1, format="%.2f",value = Tabela['wibor'][len(Tabela)-1], help="Domyślnie ustawiony jest aktualny poziom WIBOR 3M. Pamiętaj, że możesz go zmienić według własnych potrzeb.")
+                        wibor = st.number_input('WIBOR 3M*', min_value=0.1, format="%.2f",value = Tabela['wibor'][len(Tabela)-1], help="Domyślnie ustawiony jest aktualny poziom WIBOR 3M. Pamiętaj, że możesz go zmienić według własnych potrzeb.")
                     
                     
                     st.write("")
@@ -1039,7 +1039,7 @@ def main():
                     st.write("")
                     col1, col2, col3 =  st.beta_columns(3)
                     with col1:
-                        nadplata = st.number_input('Nadpłata', min_value=0, step=50,value = int(Tabela['nadplata'][len(Tabela)-1]), help="Podaj ile szacunkowo jesteś w stanie nadpłacać swój kredyt każdego miesiąca.")
+                        nadplata = st.number_input('Nadpłata*', min_value=0, step=50,value = int(Tabela['nadplata'][len(Tabela)-1]), help="Podaj ile szacunkowo jesteś w stanie nadpłacać swój kredyt każdego miesiąca.")
                     with col2:
                         kiedynad = st.number_input('Od którego roku?', min_value=0, step=1,value = int(Tabela['kiedynad'][len(Tabela)-1]), help="Zdecyduj od kiedy zaczniesz nadpłątę. 0 - od początku kredytu, 1 - po roku, 2 - po 2 latach itd.")
                     with col3:
@@ -1053,7 +1053,7 @@ def main():
 
                         if Tabela['nadplata'][len(Tabela)-1]>0 :
 
-                            st.markdown(f'<p style= "text-align:center; font-weight:600; font-size:18px;">{"Wykres przedstawia o ile szybciej spłacisz kredyt, dzięki nadpłatom"}</p>', unsafe_allow_html=True)
+                            st.markdown(f'<p style= "text-align:center; font-weight:600; font-size:18px;">{"Wykres zestawia kredyt spłacany normalnie oraz kredyt z nadpłatami"}</p>', unsafe_allow_html=True)
                             
                             
                             kredyt1 = Parametry_kredytu(Tabela["wielkosc"][len(Tabela)-1],Tabela["kiedy"][len(Tabela)-1], Tabela["okres"][len(Tabela)-1], Tabela["wibor"][len(Tabela)-1], Tabela["marza"][len(Tabela)-1],Tabela["nadplata"][len(Tabela)-1],Tabela["indn"][len(Tabela)-1],Tabela["kiedynad"][len(Tabela)-1],Tabela["skladka"][len(Tabela)-1],Tabela["procent"][len(Tabela)-1],Tabela["inds"][len(Tabela)-1],Tabela["kiedyskl"][len(Tabela)-1], Tabela["procentdyw"][len(Tabela)-1])
@@ -1163,13 +1163,13 @@ def main():
                     col1, col2, col3, col4, col5 =  st.beta_columns([1.2,0.9,0.8,0.9,0.9])
 
                     with col1:
-                        wielkosc = st.number_input('Kwota kredytu', min_value=0, step=50000,value = Tabela['wielkosc'][len(Tabela)-1], help='Podaj kwotę kredytu, o którą chciałbyś wnioskować (wnioskowałeś). Chodzi o część pożyczoną z banku, nie uwzględniaj wkładu własnego.')
+                        wielkosc = st.number_input('Kwota kredytu*', min_value=0, step=50000,value = Tabela['wielkosc'][len(Tabela)-1], help='Podaj kwotę kredytu, o którą chciałbyś wnioskować (wnioskowałeś). Chodzi o część pożyczoną z banku, nie uwzględniaj wkładu własnego.')
                     with col2:
-                        okres = st.number_input('Na ile lat?', min_value=0, step=10, max_value=30,value = Tabela['okres'][len(Tabela)-1], help = 'Określ czas trwania kredytu, wyrażony w latach.')
+                        okres = st.number_input('Na ile lat?*', min_value=0, step=10, max_value=30,value = Tabela['okres'][len(Tabela)-1], help = 'Określ czas trwania kredytu, wyrażony w latach.')
                     with col3:
                         kiedy = st.date_input('Kiedy kredyt?', min_value=datetime.today(), help='Nie zdecydowałeś się jeszcze na zaciągnięcie kredytu? Podaj szcunkową datę jego startu. Jeśli już jesteś kredytobiorcą, wybierz dzisiejszą datę. W polu "Kwota kredytu" wpisz kapitał pozostały do spłaty, a w "Na ile lat?" wpisz ile lat pozostało Ci do spłaty.')
                     with col4:
-                        marza = st.number_input('Marża banku', min_value=0.00, format="%.2f", step=0.5,value = Tabela['marza'][len(Tabela)-1], help="Podaj marżę banku wyrażoną w procentach. Przykład: Marza = 2,5% wpisz do kalkulatora 2.5")
+                        marza = st.number_input('Marża banku*', min_value=0.00, format="%.2f", step=0.5,value = Tabela['marza'][len(Tabela)-1], help="Podaj marżę banku wyrażoną w procentach. Przykład: Marza = 2,5% wpisz do kalkulatora 2.5")
                     with col5:
                         wibor = st.number_input('WIBOR 3M', min_value=0.1, format="%.2f",value = Tabela['wibor'][len(Tabela)-1], help="Domyślnie ustawiony jest aktualny poziom WIBOR 3M. Pamiętaj, że możesz go zmienić według własnych potrzeb.")
                     
@@ -1178,11 +1178,11 @@ def main():
                     col1, col2, col3, col4 =  st.beta_columns(4)
 
                     with col1:
-                        skladka = st.number_input('Składka',min_value=0, step=50,value = Tabela['skladka'][len(Tabela)-1], help="Wpisz ile złotych jesteś w stanie odłożyc miesięcznie w celu oszczędzania długoterminowego (10-30lat)")
+                        skladka = st.number_input('Składka*',min_value=0, step=50,value = Tabela['skladka'][len(Tabela)-1], help="Wpisz ile złotych jesteś w stanie odłożyc miesięcznie w celu oszczędzania długoterminowego (10-30lat)")
                     with col2:
                         kiedyskl = st.number_input('Od kiedy?',min_value=0, step=1,value = Tabela['kiedyskl'][len(Tabela)-1], help='Zdecyduj od kiedy zaczniesz bilansowanie. 0 - od teraz, 1 - za rok, 2 - za 2 lata itd.')      
                     with col3:
-                        procent = st.number_input('Oprocentowanie składki',min_value=0.00,value = Tabela['procent'][len(Tabela)-1], step=0.5, help="Podaj średnie oprocentowanie netto twoich oszczędności. Pamiętaj, że zależy ono od wielu czynników, m.in. akcpetowalnego poziomu ryzyka, horyzontu czasowego czy posiadanych instrumentów finansowych. Aby bilansowanie mogło być efektywne powinieneś przyjąć oprocentowanie składek na poziomie zbliżonym do oprocentowania kredytu (WIBOR 3M + marża).")    
+                        procent = st.number_input('Oprocentowanie składki*',min_value=0.00,value = Tabela['procent'][len(Tabela)-1], step=0.5, help="Podaj średnie oprocentowanie netto twoich oszczędności. Pamiętaj, że zależy ono od wielu czynników, m.in. akcpetowalnego poziomu ryzyka, horyzontu czasowego czy posiadanych instrumentów finansowych. Aby bilansowanie mogło być efektywne powinieneś przyjąć oprocentowanie składek na poziomie zbliżonym do oprocentowania kredytu (WIBOR 3M + marża).")    
                     with col4:
                         inds = st.number_input('Indeksacja',min_value=0.00, step=0.5,value = Tabela['inds'][len(Tabela)-1], help="Indeksacja to coroczny, procentowy wzrost nadpłat. Zazwyczaj zależy on od wysokości pensji. Polacy średniorocznie zwiększają swoje przychody o 6%. Każdy przypadek jest jednak nieco inny.  Zalecamy przyjąc poziom indeksacji między 4%, a 8%.")
                     
@@ -1195,7 +1195,7 @@ def main():
                         if Tabela['skladka'][len(Tabela)-1]>0 and Tabela['procent'][len(Tabela)-1]>0.000:
                             
                             kredyt1 = Parametry_kredytu(Tabela["wielkosc"][len(Tabela)-1],Tabela["kiedy"][len(Tabela)-1], Tabela["okres"][len(Tabela)-1], Tabela["wibor"][len(Tabela)-1], Tabela["marza"][len(Tabela)-1],Tabela["nadplata"][len(Tabela)-1],Tabela["indn"][len(Tabela)-1],Tabela["kiedynad"][len(Tabela)-1],Tabela["skladka"][len(Tabela)-1],Tabela["procent"][len(Tabela)-1],Tabela["inds"][len(Tabela)-1],Tabela["kiedyskl"][len(Tabela)-1], Tabela["procentdyw"][len(Tabela)-1])
-                            st.markdown(f'<p style= "text-align:center; font-weight:600; font-size:18px;">{"Wykres ilustruje kapitał pozostały do spłaty oraz wartość środków"}</p>', unsafe_allow_html=True)
+                            st.markdown(f'<p style= "text-align:center; font-weight:600; font-size:18px;">{"Wykres ilustruje kapitał kredytowy oraz wartość Twojej regularnej inwestycji"}</p>', unsafe_allow_html=True)
                             
                             #----------------------Wykres bilansowanie-----------------------------------------------------
                             b = kredyt1.Oszczednosc_na_Bilansowaniu_wykres()
@@ -1273,13 +1273,13 @@ def main():
                             st.write("")
                             st.write("")
 
-                            left = "1. Nadpłacamy kiedy chcemy. <br> 2. Oszczędność jest równa oprocentowaniu kredytu<br> 3. Nadpłaty możemy rozpoacząć dopiero w momencie zaciągnięcia kredytu. Bywa również, że banki obarczają nadpłaty dodatkową prowizją w pierwszym roku kredytu <br> <br>4. Nie mamy możliwości odzyskania nadpłat "
-                            right = "1. Odkładamy regularnie, co miesiąc lub kwartał <br> <br> 2. Oszczędność jest wypadkową stopy zwrotu portfela <br> i czasu spłaty kredytu <br> <br> 3. Możemy rozpocząć inwestowanie jeszcze przed zaciągnięciem kredytu. <br><br> 4. Zbierane środki mogą ostatecznie zmienić swoje przeznaczenie"
+                            left = "1. Nadpłacamy kiedy chcemy.<br> 2. Oszczędność jest równa oprocentowaniu kredytu.<br> 3. Nadpłaty możemy rozpocząć dopiero w momencie zaciągnięcia kredytu. Bywa również, że banki obarczają nadpłaty dodatkową prowizją w pierwszym roku kredytu.<br> <br>4. Nie mamy możliwości odzyskania nadpłat. "
+                            right = "1. Odkładamy regularnie, co miesiąc lub kwartał. <br> <br> 2. Oszczędność jest wypadkową stopy zwrotu portfela <br> i czasu spłaty kredytu. <br> <br> 3. Możemy rozpocząć inwestowanie jeszcze przed zaciągnięciem kredytu. <br><br> 4. Zbierane środki mogą ostatecznie zmienić swoje przeznaczenie."
                             col1, col2 = st.beta_columns(2)
                             with col1:
                                 st.markdown("<h1 style='text-align: center; color: white;'>Nadpłacanie</h1>", unsafe_allow_html=True)
                                 st.write("")
-                                st.markdown(f'<p class ="bilansowanie-left_cont">{"1. Nadpłacamy kiedy chcemy.<br><br> 2. Oszczędność jest równa oprocentowaniu kredytu<br><br> 3. Nadpłaty możemy rozpoacząć dopiero w momencie zaciągnięcia kredytu. Bywa również, że banki obarczają nadpłaty dodatkową prowizją w pierwszym roku kredytu <br> <br> 4. Nie mamy możliwości odzyskania nadpłat "}</p>', unsafe_allow_html=True)
+                                st.markdown(f'<p class ="bilansowanie-left_cont">{"1. Nadpłacamy kiedy chcemy.<br><br> 2. Oszczędność jest równa oprocentowaniu kredytu.<br><br> 3. Nadpłaty możemy rozpoacząć dopiero w momencie zaciągnięcia kredytu. Bywa również, że banki obarczają nadpłaty dodatkową prowizją w pierwszym roku kredytu. <br> <br> 4. Nie mamy możliwości odzyskania nadpłat. "}</p>', unsafe_allow_html=True)
                             with col2:
                                 st.markdown("<h1 style='text-align: center; color: white;'>Bilansowanie</h1>", unsafe_allow_html=True)
                                 st.write("")
@@ -1315,13 +1315,13 @@ def main():
                     col1, col2, col3, col4, col5 =  st.beta_columns([1.2,0.9,0.8,0.9,0.9])
                     
                     with col1:
-                        wielkosc = st.number_input('Kwota kredytu', min_value=0, step=50000,value = Tabela['wielkosc'][len(Tabela)-1],help='Podaj kwotę kredytu, o którą chciałbyś wnioskować (wnioskowałeś). Chodzi o część pożyczoną z banku, nie uwzględniaj wkładu własnego.')
+                        wielkosc = st.number_input('Kwota kredytu*', min_value=0, step=50000,value = Tabela['wielkosc'][len(Tabela)-1],help='Podaj kwotę kredytu, o którą chciałbyś wnioskować (wnioskowałeś). Chodzi o część pożyczoną z banku, nie uwzględniaj wkładu własnego.')
                     with col2:
-                        okres = st.number_input('Na ile lat?', min_value=0, step=10, max_value=30,value = Tabela['okres'][len(Tabela)-1], help = 'Określ czas trwania kredytu, wyrażony w latach.')
+                        okres = st.number_input('Na ile lat?*', min_value=0, step=10, max_value=30,value = Tabela['okres'][len(Tabela)-1], help = 'Określ czas trwania kredytu, wyrażony w latach.')
                     with col3:
                         kiedy = st.date_input('Kiedy kredyt?', min_value=datetime.today(), help='Nie zdecydowałeś się jeszcze na zaciągnięcie kredytu? Podaj szcunkową datę jego startu. Jeśli już jesteś kredytobiorcą, wybierz dzisiejszą datę. W polu "Kwota kredytu" wpisz kapitał pozostały do spłaty, a w "Na ile lat?" wpisz ile lat pozostało Ci do spłaty.')
                     with col4:
-                        marza = st.number_input('Marża banku', min_value=0.00, format="%.2f", step=0.5,value = Tabela['marza'][len(Tabela)-1], help="Podaj marżę banku wyrażoną w procentach. Przykład: Marza = 2,5% wpisz do kalkulatora 2.5")
+                        marza = st.number_input('Marża banku*', min_value=0.00, format="%.2f", step=0.5,value = Tabela['marza'][len(Tabela)-1], help="Podaj marżę banku wyrażoną w procentach. Przykład: Marza = 2,5% wpisz do kalkulatora 2.5")
                     with col5:
                         wibor = st.number_input('WIBOR 3M', min_value=0.1, format="%.2f",value = Tabela['wibor'][len(Tabela)-1], help="Domyślnie ustawiony jest aktualny poziom WIBOR 3M. Pamiętaj, że możesz go zmienić według własnych potrzeb.")
                     
@@ -1331,11 +1331,11 @@ def main():
                     col1, col2, col3, col4 =  st.beta_columns(4)
 
                     with col1:
-                        skladka = st.number_input('Składka',min_value=0, step=50,value = Tabela['skladka'][len(Tabela)-1], help="Wpisz ile złotych jesteś w stanie odłożyc miesięcznie w celu oszczędzania długoterminowego (10-30lat)?")
+                        skladka = st.number_input('Składka*',min_value=0, step=50,value = Tabela['skladka'][len(Tabela)-1], help="Wpisz ile złotych jesteś w stanie odłożyc miesięcznie w celu oszczędzania długoterminowego (10-30lat)?")
                     with col2:
                         kiedyskl = st.number_input('Od kiedy?',min_value=0, step=1,value = Tabela['kiedyskl'][len(Tabela)-1], help='Zdecyduj od kiedy zaczniesz bilansowanie. 0 - od teraz, 1 - za rok, 2 - za 2 lata itd.')      
                     with col3:
-                        procent = st.number_input('Oprocentowanie składki',min_value=0.00,value = Tabela['procent'][len(Tabela)-1], step=0.5, help="Podaj średnie oprocentowanie netto twoich oszczędności. Pamiętaj, że zależy ono od wielu czynników, m.in. akcpetowalnego poziomu ryzyka, horyzontu czasowego czy posiadanych instrumentów finansowych. Aby bilansowanie mogło być efektywne powinieneś przyjąć oprocentowanie składek na poziomie zbliżonym do oprocentowania kredytu (WIBOR 3M + marża).")    
+                        procent = st.number_input('Oprocentowanie składki*',min_value=0.00,value = Tabela['procent'][len(Tabela)-1], step=0.5, help="Podaj średnie oprocentowanie netto twoich oszczędności. Pamiętaj, że zależy ono od wielu czynników, m.in. akcpetowalnego poziomu ryzyka, horyzontu czasowego czy posiadanych instrumentów finansowych. Aby bilansowanie mogło być efektywne powinieneś przyjąć oprocentowanie składek na poziomie zbliżonym do oprocentowania kredytu (WIBOR 3M + marża).")    
                     with col4:
                         inds = st.number_input('Indeksacja',min_value=0.00, step=0.5,value = Tabela['inds'][len(Tabela)-1], help="Indeksacja to coroczny, procentowy wzrost nadpłat. Zazwyczaj zależy on od wysokości pensji. Polacy średniorocznie zwiększają swoje przychody o 6%. Każdy przypadek jest jednak nieco inny.  Zalecamy przyjąc poziom indeksacji między 4%, a 8%.")
                     
@@ -1344,7 +1344,7 @@ def main():
                     col1, col2 = st.beta_columns([0.5,1.5])
                     
                     with col1:
-                        procentdyw = st.number_input('Oczekiwana dywidenda', min_value=0.00, step=0.5, value = Tabela['procentdyw'][len(Tabela)-1], help="Dywidenda to inaczej udział w zysku. Na dywidendę możesz liczyć inwestując w akcje, a w szczególności spółki dywidendowe. Możesz zainwestować również w nieruchomość, a zysk z najmu będzie Twoją dywidendą. Jeśli masz jeszcze więcej czasu możesz zainwestować we własny biznes, który również może przynieść Ci solidną dywidendę. Na potrzeby kalkulacji zalecamy przyjąć dywidendę na poziomie od 4% do 8%.")
+                        procentdyw = st.number_input('Oczekiwana dywidenda*', min_value=0.00, step=0.5, value = Tabela['procentdyw'][len(Tabela)-1], help="Dywidenda to inaczej udział w zysku. Na dywidendę możesz liczyć inwestując w akcje, a w szczególności spółki dywidendowe. Możesz zainwestować również w nieruchomość, a zysk z najmu będzie Twoją dywidendą. Jeśli masz jeszcze więcej czasu możesz zainwestować we własny biznes, który również może przynieść Ci solidną dywidendę. Na potrzeby kalkulacji zalecamy przyjąć dywidendę na poziomie od 4% do 8%.")
                     
                         
                     if st.button("Oblicz"):
