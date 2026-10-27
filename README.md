@@ -16,3 +16,7 @@ Kod aktywacyjny do kalkulatora: FinancialMill2022
 
  
  
+
+## Configuration
+
+Database credentials are read from environment variables. Copy `.env.example` to `.env` and fill in the values (on Heroku, set them as Config Vars).

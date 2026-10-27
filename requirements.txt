@@ -5,3 +5,4 @@ streamlit==0.85.0
 mysql-connector-python==8.0.26
 numpy_financial==1.0.0
 seaborn
+python-dotenv

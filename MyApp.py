@@ -16,6 +16,19 @@ import base64
 import matplotlib.ticker as mtick
 import mysql.connector
 from mysql.connector import errorcode
+from dotenv import load_dotenv
+
+# Dane do bazy są w zmiennych środowiskowych: lokalnie z pliku .env, na Heroku z Config Vars
+load_dotenv()
+
+def get_db_config():
+    return {
+        'host': os.environ['MYSQL_HOST'],
+        'port': int(os.environ.get('MYSQL_PORT', 3306)),
+        'database': os.environ['MYSQL_DATABASE'],
+        'user': os.environ['MYSQL_USER'],
+        'password': os.environ['MYSQL_PASSWORD'],
+    }
 
 
 
@@ -448,7 +461,7 @@ st.get_option("theme.primaryColor")
 # @st.cache(allow_output_mutation=True, hash_funcs={"_thread.RLock": lambda _: None})
 # def init_connection():
 #     # return mysql.connector.custom_error_exception()
-#     return mysql.connector.connect(**st.secrets["mysql"])
+#     return mysql.connector.connect(**get_db_config())
 
 # conn = init_connection()
 
